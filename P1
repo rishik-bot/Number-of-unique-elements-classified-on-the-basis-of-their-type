@@ -1,0 +1,17 @@
+# Given a list with Pokemon name and it's type ('Pikachu,Electric')
+# task is to display the count of pokemon in each category (type).
+# expected output:
+# Grass , 91
+# Fire , 18
+# Bug, 87
+# ...
+Python Code:
+-------------
+typeall=list(map(lambda x: x.split(',')[1].strip(),pokemon))  #list of types for all pokemon
+typeunq=list(set(map(lambda x: x.split(',')[1].strip(),pokemon)))  #list of all pokemon types - unique
+
+ct=[]
+for i in typeunq:
+    ct.append(typeall.count(i))
+
+print(list(zip(typeunq,ct)))
